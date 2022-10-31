@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import Layout from "./Components/Header/Layout";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Registration from "./Components/Registration/Registration";
+import Expense from "./Components/Expense/Expense";
+import Graphs from "./Components/Graphs/Graphs";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const userLogin = useSelector((state) => state.valid.userIsLoggedIn);
+
+  return <Registration />;
+};
 
 export default App;
